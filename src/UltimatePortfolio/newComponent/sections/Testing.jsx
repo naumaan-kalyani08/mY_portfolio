@@ -3,6 +3,7 @@ import "../style/theme.css";
 import { heroSliderData } from "../components/data";
 const About = () => {
   const [heroSlider, setHeroSlider] = useState(heroSliderData);
+  console.log(setHeroSlider);  
   useEffect(() => {
     const button = document.querySelector(".button");
     if (button) {
