@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./style/textReveal.css";
 import About from "./sections/Testing";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { ReusableComponents, scrollDownGuide } from "./components/ReusableComponents";
-
+import { ReusableComponents } from "./components/ReusableComponents";
+import PropTypes from 'prop-types';
 gsap.registerPlugin(ScrollTrigger);
 
 const TextReveal = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types';
 
 const scrollDownGuide = () =>{
     return(
@@ -16,5 +16,9 @@ const ReusableComponents = ({additionalStyle}) => {
   </div>
   )
 }
+
+ReusableComponents.propTypes = {
+  additionalStyle: PropTypes.string,
+};
 
 export {ReusableComponents , scrollDownGuide}
