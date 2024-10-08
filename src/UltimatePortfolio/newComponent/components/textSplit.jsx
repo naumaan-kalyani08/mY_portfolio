@@ -2,7 +2,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import PropTypes from 'prop-types';
 gsap.registerPlugin(ScrollTrigger);
 
 const TextSplitAnimation = ({ text }) => {
