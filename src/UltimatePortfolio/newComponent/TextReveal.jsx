@@ -5,7 +5,6 @@ import "./style/textReveal.css";
 import About from "./sections/Testing";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { ReusableComponents } from "./components/ReusableComponents";
-import PropTypes from 'prop-types';
 gsap.registerPlugin(ScrollTrigger);
 
 const TextReveal = () => {
