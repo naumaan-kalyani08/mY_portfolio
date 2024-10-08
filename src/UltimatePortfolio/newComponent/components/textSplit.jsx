@@ -6,7 +6,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TextSplitAnimation = ({ text }) => {
   const textRef = useRef();
-
   useEffect(() => {
     const characters = textRef.current.childNodes;
 
