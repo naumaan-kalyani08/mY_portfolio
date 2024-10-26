@@ -1,0 +1,71 @@
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import '../style/HorizontalScroll.css'
+gsap.registerPlugin(ScrollTrigger);
+
+const HorizontalScroll = () => {
+  const racesRef = useRef(null);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    const races = racesRef.current;
+
+    function getScrollAmount() {
+      // Calculate the total scrollable width of the races element minus the viewport width
+      return races.scrollWidth - window.innerWidth;
+    }
+
+    const scrollTriggerInstance = ScrollTrigger.create({
+      trigger: wrapperRef.current,
+      start: "top 30%",
+      end: () => `+=${getScrollAmount()}`, // Dynamically calculate the end to reach the end of .races
+      pin: true,
+      scrub: 1, // Allow smooth scrolling
+      invalidateOnRefresh: true, // Recalculate on refresh (resize)
+      markers: false, // Show markers for debugging
+
+      // Animation to move the races element as per scroll
+      onUpdate: self => {
+        // Update the x position of .races based on scroll progress
+        gsap.to(races, {
+          x: -getScrollAmount() * self.progress, // Move races based on scroll progress
+          ease: "none",
+        });
+      }
+    });
+
+    // Recalculate the scroll amount on window resize
+    window.addEventListener("resize", ScrollTrigger.refresh);
+
+    // Cleanup function to avoid memory leaks
+    return () => {
+      scrollTriggerInstance.kill();
+      window.removeEventListener("resize", ScrollTrigger.refresh);
+    };
+  }, []);
+
+  return (
+    <div className="horizontalScrollWrapper">
+      <div className="space-50vh "></div>
+      <div ref={wrapperRef} className="racesWrapper"> {/* ScrollTrigger trigger */}
+        <div ref={racesRef} className="races"> {/* This will be animated to the left */}
+          <h2>Hey!</h2>
+          <h2> Welcome</h2>
+          <h2>To </h2>
+          <h2> My</h2>
+          <h2>
+          Portfolio
+          </h2>
+          <h2> And </h2>
+          <h2> Myself</h2>
+          <h2> is</h2>
+          {/* <h2>Japan</h2> */}
+        </div>
+      </div>
+      {/* <div className="space-100vh lightBG"></div> */}
+    </div>
+  );
+};
+
+export default HorizontalScroll;
