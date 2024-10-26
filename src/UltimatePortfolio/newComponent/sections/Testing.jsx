@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../style/theme.css";
+import AOS from "aos";
+// import "aos/dist/aos.css";
 import { heroSliderData } from "../components/data";
 const About = () => {
   const [heroSlider, setHeroSlider] = useState(heroSliderData);
@@ -12,9 +14,10 @@ const About = () => {
   }, []);
 
   return (
+    <>
     <section id="intro">
       <div className="container">
-        <div className="d-flex align-items-center justify-content-center">
+        <div className="d-flex align-items-center justify-content-center about-btn-wrapper">
           <div className="button-wrapper">
             <button
               className="button"
@@ -56,6 +59,30 @@ const About = () => {
                 ))}
               </div>
               <div className="carousel-inner">
+              <button
+                  className="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Previous</span>
+                </button>
+                <button
+                  className="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Next</span>
+                </button>
                 {heroSlider.map((item, index) => (
                   <div
                     className={`carousel-item ${index === 0 ? "active" : ""}`}
@@ -69,30 +96,6 @@ const About = () => {
                   </div>
                 ))}
               </div>
-              <button
-                className="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev"
-              >
-                <span
-                  className="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Previous</span>
-              </button>
-              <button
-                className="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next"
-              >
-                <span
-                  className="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Next</span>
-              </button>
             </div>
           </div>
 
@@ -118,7 +121,7 @@ const About = () => {
               className="flexbox"
               data-aos="fade-zoom-in"
               data-aos-easing="ease-in-back"
-              data-aos-delay="1500"
+              data-aos-delay="2000"
               data-aos-offset="0"
             >
               <div className="mouse"></div>
@@ -127,6 +130,8 @@ const About = () => {
         </div>
       </div>
     </section>
+
+    </>
   );
 };
 
