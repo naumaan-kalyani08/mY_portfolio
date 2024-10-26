@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../style/theme.css";
-import AOS from "aos";
-// import "aos/dist/aos.css";
 import { heroSliderData } from "../components/data";
 const About = () => {
   const [heroSlider, setHeroSlider] = useState(heroSliderData);
