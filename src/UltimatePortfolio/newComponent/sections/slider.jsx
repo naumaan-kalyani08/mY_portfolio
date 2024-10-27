@@ -1,16 +1,24 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import '../style/slider.css'; // Make sure to include your CSS here
+import '../style/slider.css';
 
 const Slider = () => {
   const [count, setCount] = useState(0);
   const targetsRef = useRef([]);
   const targetCount = 4; // Number of slides
+  const autoplayDelay = 3000; // Autoplay delay in milliseconds
 
   useEffect(() => {
     gsap.set(targetsRef.current, { xPercent: 100 });
     gsap.set(targetsRef.current[0], { xPercent: 0 });
-  }, []);
+
+    // Autoplay functionality
+    const interval = setInterval(() => {
+      slideOneNext();
+    }, autoplayDelay);
+
+    return () => clearInterval(interval); // Cleanup on component unmount
+  }, [count]);
 
   const slideOneNext = () => {
     const currentSlide = targetsRef.current[count];

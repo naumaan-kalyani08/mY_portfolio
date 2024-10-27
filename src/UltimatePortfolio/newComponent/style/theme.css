@@ -263,7 +263,7 @@ height: 450px;
   }
   
 /* responisve  */
-@media(max-width:430px){
+/* @media(max-width:430px){
     .mobile-design{
         justify-content: center;
     }
@@ -283,7 +283,7 @@ height: 450px;
         height: 40dvh;
     }
     
-}
+} */
 
 
 
