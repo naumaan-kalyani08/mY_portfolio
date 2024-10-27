@@ -220,7 +220,13 @@ height: 450px;
 }
 
 
-  
+  .border-white .mouse {
+    border-color: white;
+  }
+  .border-white .mouse::before{
+    background-color: white;
+  }
+
   .button-bg {
     position: absolute;
     top: 0;

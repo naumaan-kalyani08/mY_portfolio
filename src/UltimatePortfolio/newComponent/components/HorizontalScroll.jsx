@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import '../style/HorizontalScroll.css'
+import { ScrollAlert } from "./ReusableComponents";
 gsap.registerPlugin(ScrollTrigger);
 
 const HorizontalScroll = () => {
@@ -46,7 +47,7 @@ const HorizontalScroll = () => {
   }, []);
 
   return (
-    <div className="horizontalScrollWrapper">
+    <>
       <div className="space-50vh "></div>
       <div ref={wrapperRef} className="racesWrapper"> {/* ScrollTrigger trigger */}
         <div ref={racesRef} className="races"> {/* This will be animated to the left */}
@@ -59,12 +60,12 @@ const HorizontalScroll = () => {
           </h2>
           <h2> And </h2>
           <h2> Myself</h2>
-          <h2> is</h2>
           {/* <h2>Japan</h2> */}
         </div>
       </div>
+      <ScrollAlert additionalStyle="text-reveal-scroll-icon position-sticky border-white mb-2"/>
       {/* <div className="space-100vh lightBG"></div> */}
-    </div>
+    </>
   );
 };
 
