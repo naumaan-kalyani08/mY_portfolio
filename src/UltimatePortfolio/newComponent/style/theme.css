@@ -47,6 +47,7 @@ width: 40px;
 
 .first-scroll-icon{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     /* padding-top: 18%; */
@@ -439,3 +440,12 @@ height: 450px;
   timeline{
     color: black;
   }
+  .scroll-down-text{
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+  
+body{
+  /* background-color: #fff4b5; */
+  /* background-color: #212121; */
+}
