@@ -63,7 +63,8 @@ const HorizontalScroll = () => {
           {/* <h2>Japan</h2> */}
         </div>
       </div>
-      <ScrollAlert additionalStyle="text-reveal-scroll-icon position-sticky border-white mb-2"/>
+      <div className="space-50vh "></div>
+      <ScrollAlert additionalStyle="text-reveal-scroll-icon position-sticky  mb-2"/>
       {/* <div className="space-100vh lightBG"></div> */}
     </>
   );
