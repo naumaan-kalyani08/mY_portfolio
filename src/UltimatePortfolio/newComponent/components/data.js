@@ -9,12 +9,12 @@ export const heroSliderData =[
     },
     {
         id:3,
-        img:'./images/heroSlider/hero-03.jpg',
+        img:'./images/heroSlider/hero-06.jpg',
     },
-    {
-        id:4,
-        img:'./images/heroSlider/hero-05.jpg',
-    },
+    // {
+    //     id:4,
+    //     img:'./images/heroSlider/hero-04.jpg',
+    // },
 
     // {
     //     id:,

@@ -24,7 +24,7 @@ const HorizontalScroll = () => {
       pin: true,
       scrub: 1, // Allow smooth scrolling
       invalidateOnRefresh: true, // Recalculate on refresh (resize)
-      markers: false, // Show markers for debugging
+      markers: true, // Show markers for debugging
 
       // Animation to move the races element as per scroll
       onUpdate: self => {
