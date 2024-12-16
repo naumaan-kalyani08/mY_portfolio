@@ -3,7 +3,7 @@ import "../style/theme.css";
 import { heroSliderData } from "../components/data";
 const About = () => {
   const [heroSlider, setHeroSlider] = useState(heroSliderData);
-  console.log(setHeroSlider);  
+  console.log(setHeroSlider);
   useEffect(() => {
     const button = document.querySelector(".button");
     if (button) {
@@ -12,10 +12,9 @@ const About = () => {
   }, []);
 
   return (
-    <>
     <section id="intro">
       <div className="container">
-        <div className="d-flex align-items-center justify-content-center about-btn-wrapper">
+        <div className="d-flex align-items-center justify-content-center about-btn-wrapper pb-4">
           <div className="button-wrapper">
             <button
               className="button"
@@ -29,9 +28,9 @@ const About = () => {
           </div>
         </div>
 
-        <div className="row introduction">
+        <div className="row introduction justify-content-center">
           <div
-            className="col-xl-5 hero-bg"
+            className="col-xl-4 hero-bg"
             data-aos="flip-right"
             data-aos-offset="100"
             data-aos-duration="1500"
@@ -41,7 +40,7 @@ const About = () => {
               id="carouselExampleIndicators"
               className="carousel slide carousel-fade"
               data-bs-ride="carousel"
-              data-bs-interval="1500"
+              data-bs-interval="3000"
             >
               <div className="carousel-indicators">
                 {heroSlider.map((_, index) => (
@@ -57,30 +56,6 @@ const About = () => {
                 ))}
               </div>
               <div className="carousel-inner">
-              <button
-                  className="carousel-control-prev"
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide="prev"
-                >
-                  <span
-                    className="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span className="visually-hidden">Previous</span>
-                </button>
-                <button
-                  className="carousel-control-next"
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide="next"
-                >
-                  <span
-                    className="carousel-control-next-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span className="visually-hidden">Next</span>
-                </button>
                 {heroSlider.map((item, index) => (
                   <div
                     className={`carousel-item ${index === 0 ? "active" : ""}`}
@@ -100,15 +75,32 @@ const About = () => {
           <div className="col-xl-6">
             <div className="d-flex mobile-design"></div>
             <div className="">
+              <div className="d-flex row">
+                <div className="col-lg-9">
+                  <p className="intro-name highlight">
+                    Naumaan <br /> Kalyani
+                  </p>
+                </div>
+                <div className="col-lg-3">
+                  <img
+                    src="./logo192.png"
+                    className="App-logo"
+                    alt="react-logo"
+                  />
+                </div>
+              </div>
+              {/* <p>
+                I'm a Web Developer
+              </p> */}
               <p id="companionMethods"></p>
               <p
                 data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="1000"
                 data-aos-offset="0"
+                className="about-intro"
               >
-                I am <strong className="highlight">Naumaan Kalyani </strong> , a
-                passionate Frontend Web Developer from Ahmedabad, India and
+                A passionate Frontend Web Developer from Ahmedabad, India and
                 Tries to give my potential to its fullest, bringing you web
                 development and design from the future. My expertise is
                 developing next-level websites and web applications including
@@ -128,8 +120,6 @@ const About = () => {
         </div>
       </div>
     </section>
-
-    </>
   );
 };
 

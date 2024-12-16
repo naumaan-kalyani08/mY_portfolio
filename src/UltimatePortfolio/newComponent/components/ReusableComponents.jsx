@@ -14,7 +14,7 @@ const ScrollAlert = ({additionalStyle}) => {
   return (
     <div className={`first-scroll-icon ${additionalStyle}`}>
     <div className="mouse"> </div>
-      <p className='mt-1'> scroll down to scroll</p>
+      <p className='mt-1 highlight'> scroll down to scroll</p>
   </div>
   )
 }

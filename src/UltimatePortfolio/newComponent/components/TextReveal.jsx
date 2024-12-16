@@ -2,13 +2,12 @@ import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import About from "../sections/Testing";
-import '../style/textReveal.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import "../style/textReveal.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { ReusableComponents } from "./ReusableComponents";
 gsap.registerPlugin(ScrollTrigger);
 
 const TextReveal = () => {
-  
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -65,39 +64,28 @@ const TextReveal = () => {
     };
   }, []);
 
-  return (<>
-          {/* <p className="color-black h-c">
+  return (
+    <>
+      {/* <p className="color-black h-c">
           helo
         </p> */}
-    <div className="main-p">   
-  
-    <div id="main">
-      <div id="top">
-
-        <h1 id="top-h1">Naumaan</h1>
-      </div>
-      <div id="center">
-      <div className="content">
-                {/* <h4>GRAVITY</h4>
-                <h3><i>Browse</i> the work that define a <i>movement</i> and created a craft.</h3>
-                <div className="btn">
-                    <h5>ENTER GALLERY</h5>
-                </div>
-                <h2>(17)</h2> */}
-
-            <About/>
-            
+      <div className="main-p">
+        <div id="main">
+          <div id="top">
+            <h1 id="top-h1">ABOUT</h1>
+          </div>
+          <div id="center">
+            <div className="content">
+              <About />
             </div>
+          </div>
+          <div id="bottom">
+            <h1 id="bottom-h1">ABOUT</h1>
+            <ReusableComponents additionalStyle="text-reveal-scroll-icon" />
+          </div>
+        </div>
       </div>
-      <div id="bottom">
-        <h1 id="bottom-h1">Kalyani</h1>
-        
-        
-        <ReusableComponents additionalStyle="text-reveal-scroll-icon"/>
-      </div>
-    </div>
-    </div>
-  </>
+    </>
   );
 };
 

@@ -157,7 +157,7 @@ object-fit: cover;
 max-width: 400px;
 height: 100%;
 border-radius: 15px;
-height: 450px;
+height: 700px;
 }
 .button {
     display: inline-block;
@@ -188,7 +188,7 @@ height: 450px;
   .mouse {
 	width: 40px;
 	height: 70px;
-	border: 2px solid #070707;
+	border: 2px solid #00ebeb;
 	border-radius: 60px;
 	position: relative;
 	&::before {
@@ -199,7 +199,7 @@ height: 450px;
 		top: 10px;
 		left: 50%;
 		transform: translateX(-50%);
-		background-color: #141414;
+		background-color: #00ebeb;
 		border-radius: 50%;
 		opacity: 1;
 		animation: wheel 2s infinite;
@@ -305,7 +305,7 @@ height: 450px;
     color: #3dffff;
 }
 .highlight{
-    color: #00EBEB;
+    color: #61dafb;
     font-size: 20px;
 }
 
@@ -448,4 +448,42 @@ height: 450px;
 body{
   /* background-color: #fff4b5; */
   /* background-color: #212121; */
+}
+.intro-name{
+  font-size: 4.5rem;
+  /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,152,155,1) 0.1%, rgba(0,94,120,1) 94.2% ); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  width: 100%; */
+  text-align: left;
+  line-height: 75px;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+
+.about-intro{
+  font-size: 1.35rem;
+  line-height: 37px;
+}
+
+.App-logo {
+  pointer-events: none;
+  height: 14dvh;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

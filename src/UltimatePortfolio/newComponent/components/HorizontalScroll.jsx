@@ -17,10 +17,12 @@ const HorizontalScroll = () => {
       return races.scrollWidth - window.innerWidth;
     }
 
+    const additionalSpace = 150;
     const scrollTriggerInstance = ScrollTrigger.create({
       trigger: wrapperRef.current,
       start: "top 30%",
-      end: () => `+=${getScrollAmount()}`, // Dynamically calculate the end to reach the end of .races
+      // end: () => `+=${getScrollAmount()}`, // Dynamically calculate the end to reach the end of .races
+      end: () => `+=${getScrollAmount() + additionalSpace}`,
       pin: true,
       scrub: 1, // Allow smooth scrolling
       invalidateOnRefresh: true, // Recalculate on refresh (resize)
@@ -51,15 +53,21 @@ const HorizontalScroll = () => {
       <div className="space-50vh "></div>
       <div ref={wrapperRef} className="racesWrapper"> {/* ScrollTrigger trigger */}
         <div ref={racesRef} className="races"> {/* This will be animated to the left */}
-          <h2>Hey!</h2>
+        {/* Welcome to my portfolio—a showcase of my skills, expertise, and projects. */}
           <h2> Welcome</h2>
           <h2>To </h2>
           <h2> My</h2>
           <h2>
-          Portfolio
+          Portfolio 
           </h2>
-          <h2> And </h2>
-          <h2> Myself</h2>
+          <h2>a </h2>
+          <h2>  showcase  </h2>
+          <h2> of  </h2>
+          <h2>my </h2>
+          <h2>skills </h2>
+          <h2> expertise</h2>
+          <h2>  and </h2>
+          <h2>projects. </h2>
           {/* <h2>Japan</h2> */}
         </div>
       </div>
