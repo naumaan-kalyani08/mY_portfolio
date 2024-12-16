@@ -1,0 +1,8 @@
+@media(max-width:450px){
+    .wrapper .h1 {
+        font-size: 5em;
+    }
+    .wrapper {
+        overflow-x: hidden;
+    }
+}
