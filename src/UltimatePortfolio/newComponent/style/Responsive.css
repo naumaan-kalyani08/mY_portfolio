@@ -39,7 +39,7 @@
         align-items: center;
         justify-content: center;
     }
-    .mouse {
+    /* .mouse {
         width: 30px;
         height: 50px;
     }
@@ -47,7 +47,7 @@
         &::before {
             width: 6px;
             height: 6px; 
-        }}
+        }} */
     .races h2{
         /* font-size: 156px; */
         font-size: 50px;
