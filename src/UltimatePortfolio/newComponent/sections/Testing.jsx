@@ -72,21 +72,23 @@ const About = () => {
             </div>
           </div>
 
-          <div className="col-xl-6">
+          <div className="col-xl-8">
             <div className="d-flex mobile-design"></div>
             <div className="">
-              <div className="d-flex row">
-                <div className="col-lg-9">
+              <div className="d-flex row align-items-center">
+                <div className="col-lg-6 col-8">
                   <p className="intro-name highlight">
                     Naumaan <br /> Kalyani
                   </p>
                 </div>
-                <div className="col-lg-3">
+                <div className="col-lg-3 col-4">
+                  <div className="mobile-flex">
                   <img
                     src="./logo192.png"
                     className="App-logo"
                     alt="react-logo"
                   />
+                  </div>
                 </div>
               </div>
               {/* <p>

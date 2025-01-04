@@ -38,25 +38,3 @@ body {
     /* padding-left: 100vw; */
     /* max-width: 1200px; */
 }
-
-@media(max-width:430px){
-    .races h2{
-        font-size: 156px;
-    }
-}
-
-/* Responsive font sizes using media queries */
-
-/* 
-.spacer {
-    height: 100vh;
-}
-
-.box {
-    width: 100px;
-    height: 100px;
-    background-color: #3498db;
-    opacity: 0; 
-    position: relative;
-    transform: translateY(50px);
-} */

@@ -5,4 +5,51 @@
     .wrapper {
         overflow-x: hidden;
     }
+    .highlight {
+        font-size: 16px;
+    }
+    .about-btn-wrapper{
+        padding: 0 !important;
+    }
+    .intro-name {
+        font-size: 35px ;
+        line-height: 35px;
+        margin: 12px 0;
+    }
+    #companionMethods {
+        margin-bottom: 0;
+        display: none;
+    }
+    .about-intro {
+        font-size: 14px;
+        line-height: 25px;
+        white-space: break-spaces;
+    }
+    .hero-bg img {
+        height: 360px;
+    }
+    .introduction {
+        padding-top: 0 ;
+    }
+    .App-logo{
+        height: 10dvh;
+    }
+    .mobile-flex{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mouse {
+        width: 30px;
+        height: 50px;
+    }
+    .mouse {
+        &::before {
+            width: 6px;
+            height: 6px; 
+        }}
+    .races h2{
+        /* font-size: 156px; */
+        font-size: 50px;
+    }
 }
