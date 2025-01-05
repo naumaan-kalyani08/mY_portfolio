@@ -5,12 +5,14 @@ import TextReveal from './UltimatePortfolio/newComponent/components/TextReveal';
 import HorizontalScroll from './UltimatePortfolio/newComponent/components/HorizontalScroll';
 import PageLoader from './UltimatePortfolio/newComponent/components/PageLoader';
 import'./UltimatePortfolio/newComponent/style/Responsive.css'
+import About from './UltimatePortfolio/newComponent/sections/Testing';
 const App = () => {
   return (
     <>
      <PageLoader/>
     <HorizontalScroll/>
-     <TextReveal/>     
+    <About/>
+     {/* <TextReveal/>      */}
     </>
   )
 }
