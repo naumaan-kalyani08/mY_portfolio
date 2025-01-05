@@ -17,14 +17,14 @@ const HorizontalScroll = () => {
       return races.scrollWidth - window.innerWidth;
     }
 
-    const additionalSpace = 150;
+    const additionalSpace = 500;
     const scrollTriggerInstance = ScrollTrigger.create({
       trigger: wrapperRef.current,
       start: "top 30%",
       // end: () => `+=${getScrollAmount()}`, // Dynamically calculate the end to reach the end of .races
       end: () => `+=${getScrollAmount() + additionalSpace}`,
       pin: true,
-      scrub: 1, // Allow smooth scrolling
+      scrub: 2, // Allow smooth scrolling
       invalidateOnRefresh: true, // Recalculate on refresh (resize)
       markers: false, // Show markers for debugging
 
@@ -50,29 +50,21 @@ const HorizontalScroll = () => {
 
   return (
     <>
-      <div className="space-50vh "></div>
+      {/* <div className="space-50vh "></div> */}
       <div ref={wrapperRef} className="racesWrapper"> {/* ScrollTrigger trigger */}
         <div ref={racesRef} className="races"> {/* This will be animated to the left */}
         {/* Welcome to my portfolio—a showcase of my skills, expertise, and projects. */}
           <h2> Welcome</h2>
           <h2>To </h2>
           <h2> My</h2>
-          <h2>
-          Portfolio 
-          </h2>
-          <h2>a </h2>
-          <h2>  showcase  </h2>
-          <h2> of  </h2>
-          <h2>my </h2>
-          <h2>skills </h2>
-          <h2> expertise</h2>
-          <h2>  and </h2>
-          <h2>projects. </h2>
+          <h2>Portfolio </h2>
+
           {/* <h2>Japan</h2> */}
         </div>
       </div>
-      <div className="space-50vh "></div>
-      <ScrollAlert additionalStyle="text-reveal-scroll-icon position-sticky  mb-2"/>
+      
+      <ScrollAlert additionalStyle="text-reveal-scroll-icon mb-2 "/>
+      <div className="py-4"></div>
       {/* <div className="space-100vh lightBG"></div> */}
     </>
   );

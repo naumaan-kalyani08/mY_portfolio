@@ -84,22 +84,14 @@ justify-content: center;
 
 .body-background{
     background-color: #060918;
-    /* background: rgb(6,9,24);
-    background: linear-gradient(144deg, rgba(6,9,24,1) 0%, rgba(9,18,67,1) 56%, rgba(20,35,111,1) 100%); */
     color: #ffffff;
     font-family: "Montserrat", sans-serif;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
-    /* height: 100vh; */
 }
 section{
-    height: 100dvh;
-    /* position: sticky; */
-    /* top: 0; */
     width: 100%;
     border-top: solid;
-    /* background: rgb(6,9,24);
-    background: linear-gradient(144deg, rgba(6,9,24,1) 0%, rgba(9,18,67,1) 73%, rgba(20,35,111,1) 100%); */
     border-image: linear-gradient(to right, #060918, #04d5ff78,#060918) 1;
     /* border-image-slice: 1; */
     background-color: #060918;
@@ -112,28 +104,6 @@ section{
     overflow: scroll;
 }
 
-/* section::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    /* border-top: 2px red; */
-
-/* section :nth-child(1){
-    background-color: yellow;
-} */
-/* section:nth-child(2){
-    background-color: #060918;
-    
-}
-section:nth-child(3){
-    background-color: #060918;
-
-}
-section:nth-child(4){
-    background-color: #060918;
-} */
  .details-card-wrapper{
     display: inline-block;
     border: 1px solid white;
@@ -157,7 +127,8 @@ object-fit: cover;
 max-width: 400px;
 height: 100%;
 border-radius: 15px;
-height: 700px;
+/* height: 700px; */
+height: 400px;
 }
 .button {
     display: inline-block;
@@ -461,10 +432,13 @@ body{
   margin-bottom: 40px;
   font-weight: 600;
 }
-
+.scroll-icon-spacing{
+  padding-top: 10dvh;
+}
 
 .about-intro{
   font-size: 1.35rem;
+  color: white;
   line-height: 37px;
 }
 
@@ -486,4 +460,17 @@ body{
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes visibility {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.custom-fade-in {
+  animation: visibility 10s ease-in-out;
 }

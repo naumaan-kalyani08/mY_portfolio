@@ -13,6 +13,9 @@ body {
 .space-50vh{
     height: 50vh;
 }
+.space-10dvh{
+    height: 10dvh;
+}
 .space-100vh{
     height: 100vh;
 }
@@ -34,7 +37,7 @@ body {
 
 .races{
     display: flex;
-    padding-left: 60dvw;
+    padding-left: 100dvw;
     /* padding-left: 100vw; */
     /* max-width: 1200px; */
 }

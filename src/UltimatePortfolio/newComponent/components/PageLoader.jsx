@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import "../style/PageLoader.css";
+import { ScrollAlert } from "./ReusableComponents";
 
 const PageLoader = () => {
   const boxesRef = useRef([]);
@@ -47,7 +48,9 @@ const PageLoader = () => {
             {letter}
           </div>
         ))}
+      <ScrollAlert additionalStyle="text-reveal-scroll-icon   scroll-icon-spacing custom-fade-in"/>
       </div>
+      
     </div>
   );
 };

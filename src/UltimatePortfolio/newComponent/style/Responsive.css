@@ -40,4 +40,7 @@
         justify-content: center;
     }
 
+    .races h2, .grd-txt {
+        font-size: 20dvh;}
+
 }
