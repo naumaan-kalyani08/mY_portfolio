@@ -474,3 +474,69 @@ body{
 .custom-fade-in {
   animation: visibility 10s ease-in-out;
 }
+.mobile-flex{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+.personal-details-timeline{
+  color: #fff;
+}
+.personal-details-timeline{
+  border: 1px solid #5fd6f6;
+  border-radius: 15px;
+  padding: 25px 15px;
+  max-width: 400px;
+}
+.personal-details-timeline .ant-timeline-item-tail{
+  border-inline-start: 1px solid rgb(205, 205, 205);
+}
+.ant-timeline-item-head .ant-timeline-item-head-blue{
+  border-color: #5fd6f6;
+}
+@media(max-width:450px){
+  .wrapper .h1 {
+      font-size: 5em;
+  }
+  .wrapper {
+      overflow-x: hidden;
+  }
+  .about-btn-wrapper {
+      padding: 0 !important;
+  }
+  .introduction {
+      padding-top: 0;
+  }
+  .hero-bg img {
+      max-width: 390px;
+      width: 100%;
+      max-width: 300px;
+      max-width: 400px;
+      height: 100%;
+      border-radius: 15px;
+      height: 370px;
+      object-fit: cover;
+  }
+  .about-intro {
+      font-size: 14px;
+      line-height: 19px;
+  }
+
+  .intro-name {
+      font-size: 45px;
+      line-height: 47px;
+      margin-bottom: 0px;
+  }
+  .App-logo {
+      height: 11dvh;
+  }
+
+  .races h2, .grd-txt {
+    font-size: 15dvh;
+    }
+
+    .name-wrapper{
+      margin: 15px 0;
+    }
+
+}

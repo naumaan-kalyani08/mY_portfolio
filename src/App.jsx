@@ -7,6 +7,7 @@ import PageLoader from './UltimatePortfolio/newComponent/components/PageLoader';
 import'./UltimatePortfolio/newComponent/style/Responsive.css'
 import About from './UltimatePortfolio/newComponent/sections/Testing';
 import PersonalDetails from './UltimatePortfolio/newComponent/sections/PersonalDetails';
+import '../src/UltimatePortfolio/newComponent/style/Responsive.css'
 const App = () => {
   return (
     <>

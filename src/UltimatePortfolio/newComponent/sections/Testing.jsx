@@ -14,7 +14,7 @@ const About = () => {
   return (
     <section id="intro">
       <div className="container">
-        <div className="d-flex align-items-center justify-content-center about-btn-wrapper pb-4">
+        <div className="d-flex align-items-center justify-content-center about-btn-wrapper py-3">
           <div className="button-wrapper">
             <button
               className="button"
@@ -75,7 +75,7 @@ const About = () => {
           <div className="col-xl-8">
             <div className="d-flex mobile-design"></div>
             <div className="">
-              <div className="d-flex row align-items-center">
+              <div className="d-flex row align-items-center name-wrapper">
                 <div className="col-lg-6 col-8">
                   <p className="intro-name highlight">
                     Naumaan <br /> Kalyani

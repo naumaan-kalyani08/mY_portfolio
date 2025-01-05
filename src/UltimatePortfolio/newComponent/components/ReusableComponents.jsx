@@ -19,6 +19,24 @@ const ScrollAlert = ({additionalStyle}) => {
   )
 }
 
+const SectionButton = ({btnText}) =>{
+  return(
+    <div className="d-flex align-items-center justify-content-center about-btn-wrapper py-3">
+    <div className="button-wrapper">
+      <button
+        className="button"
+        type="button"
+        data-aos="fade-right "
+        data-aos-duration="3000"
+      >
+        {btnText}
+      </button>
+      <div className="button-bg"></div>
+    </div>
+  </div>
+  )
+}
+
 ReusableComponents.propTypes = {
   additionalStyle: PropTypes.string,
 };
@@ -27,4 +45,8 @@ ScrollAlert.propTypes = {
   additionalStyle: PropTypes.string,
 };
 
-export {ReusableComponents , ScrollAlert}
+SectionButton.propTypes = {
+  btnText: PropTypes.string,
+};
+
+export {ReusableComponents , ScrollAlert ,SectionButton}
