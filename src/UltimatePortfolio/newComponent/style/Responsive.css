@@ -5,51 +5,39 @@
     .wrapper {
         overflow-x: hidden;
     }
-    .highlight {
-        font-size: 16px;
-    }
-    .about-btn-wrapper{
+    .about-btn-wrapper {
         padding: 0 !important;
     }
-    .intro-name {
-        font-size: 38px;
-        line-height: 43px;
-        margin: 12px 0;
+    .introduction {
+        padding-top: 0;
     }
-    #companionMethods {
-        margin-bottom: 0;
-        display: none;
+    .hero-bg img {
+        max-width: 390px;
+        width: 100%;
+        max-width: 300px;
+        max-width: 400px;
+        height: 100%;
+        border-radius: 15px;
+        height: 370px;
+        object-fit: cover;
     }
     .about-intro {
         font-size: 14px;
-        line-height: 25px;
-        white-space: break-spaces;
+        line-height: 19px;
     }
-    .hero-bg img {
-        height: 430px;
+
+    .intro-name {
+        font-size: 45px;
+        line-height: 47px;
+        margin-bottom: 0px;
     }
-    .introduction {
-        padding-top: 0 ;
-    }
-    .App-logo{
-        height: 10dvh;
+    .App-logo {
+        height: 11dvh;
     }
     .mobile-flex{
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    /* .mouse {
-        width: 30px;
-        height: 50px;
-    }
-    .mouse {
-        &::before {
-            width: 6px;
-            height: 6px; 
-        }} */
-    .races h2{
-        /* font-size: 156px; */
-        font-size: 10dvh;
-    }
+
 }
