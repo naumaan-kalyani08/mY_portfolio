@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import '../style/timeline.css'
-import { SectionButton } from '../components/ReusableComponents';
 
 const Timeline = () => {
   useEffect(() => {
@@ -46,46 +45,58 @@ const Timeline = () => {
   }, []);
 
   return (
-    <section>
-<SectionButton btnText="Personal Info" />
     <div className="timeline hide-line">
       <div className="timeline-container left">
-        <a href="#" className="content-link">
+        <p className="content-link">
           <div className="content">
-            <span className="icon"><i className="fas fa-map-marked-alt"></i></span> Full Name :Kalyani Naumaan Khan Amin 
+            <p>
+            Full Name :
+            </p>
+            <p>
+            Kalyani Naumaan Khan Amin 
+            </p>
           </div>
-        </a>
+        </p>
       </div>
       <div className="timeline-container right">
-        <a href="#" className="content-link">
+        <p className="content-link">
           <div className="content">
-            <span className="icon"><i className="fas fa-filter"></i></span>Date Of Birth :8th March 2002 
+            <p>
+            Date Of Birth :
+            </p>
+            <p>
+            8th March 2002 
+            </p>
+            <span className="icon"><i className="fas fa-filter"></i></span>
           </div>
-        </a>
+        </p>
       </div>
       <div className="timeline-container left">
-        <a href="#" className="content-link">
+        <p className="content-link">
           <div className="content">
-            <span className="icon"><i className="fas fa-user"></i></span> Age:22 
+            <p>Age:</p>
+            <p>22</p>
+            
           </div>
-        </a>
+        </p>
       </div>
       <div className="timeline-container right">
-        <a href="#" className="content-link">
+        <p className="content-link">
           <div className="content">
-            <span className="icon"><i className="fas fa-phone-alt"></i></span> Religion:<span> Muslim (Sunni) </span>
+            <p>Religion:</p>
+            <p><span> Muslim (Sunni) </span></p>
+
           </div>
-        </a>
+        </p>
       </div>
       <div className="timeline-container left">
-        <a href="#" className="content-link">
+        <p className="content-link">
           <div className="content">
             <span className="icon"><i className="fas fa-heart"></i></span> Profession:<span> As you can see A Web Developer &#128516; </span>
           </div>
-        </a>
+        </p>
       </div>
     </div>
-    </section>
   );
 };
 
