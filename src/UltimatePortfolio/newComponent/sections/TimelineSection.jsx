@@ -65,9 +65,6 @@ const Timeline = () => {
             <div className="content">
               <p>Date Of Birth :</p>
               <p>8th March 2002</p>
-              <span className="icon">
-                <i className="fas fa-filter"></i>
-              </span>
             </div>
           </p>
         </div>
@@ -92,9 +89,6 @@ const Timeline = () => {
         <div className="timeline-container left">
           <p className="content-link">
             <div className="content">
-              <span className="icon">
-                <i className="fas fa-heart"></i>
-              </span>{" "}
               Profession:<span> As you can see A Web Developer &#128516; </span>
             </div>
           </p>

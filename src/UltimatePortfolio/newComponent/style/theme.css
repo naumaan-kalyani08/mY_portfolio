@@ -128,7 +128,7 @@ max-width: 400px;
 height: 100%;
 border-radius: 15px;
 /* height: 700px; */
-height: 400px;
+height: 700px;
 }
 .button {
     display: inline-block;
@@ -512,9 +512,9 @@ body{
       width: 100%;
       max-width: 300px;
       max-width: 400px;
-      height: 100%;
+      /* height: 100%; */
       border-radius: 15px;
-      height: 370px;
+      height: 500px;
       object-fit: cover;
   }
   .about-intro {
