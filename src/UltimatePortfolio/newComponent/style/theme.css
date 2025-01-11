@@ -518,17 +518,19 @@ body{
       object-fit: cover;
   }
   .about-intro {
-      font-size: 14px;
-      line-height: 19px;
-  }
-
+    font-size: 15px;
+    line-height: 22px;
+    padding: 0 10px;
+    text-align: justify;
+    letter-spacing: 1px;
+}
   .intro-name {
       font-size: 45px;
       line-height: 47px;
       margin-bottom: 0px;
   }
   .App-logo {
-      height: 11dvh;
+      height: 8dvh;
   }
 
   .races h2, .grd-txt {
