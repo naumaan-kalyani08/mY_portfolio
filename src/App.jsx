@@ -9,6 +9,7 @@ import About from './UltimatePortfolio/newComponent/sections/Testing';
 import '../src/UltimatePortfolio/newComponent/style/Responsive.css'
 import '../src/UltimatePortfolio/newComponent/style/override.css'
 import Timeline from './UltimatePortfolio/newComponent/sections/TimelineSection';
+import PhotoGrid from './UltimatePortfolio/newComponent/sections/PhotoGrid';
 const App = () => {
   return (
     <>
@@ -17,6 +18,7 @@ const App = () => {
     <About/>
     <Timeline/>
      {/* <TextReveal/>      */}
+     <PhotoGrid/>
     </>
   )
 }
