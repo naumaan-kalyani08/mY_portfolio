@@ -42,5 +42,11 @@
 
     .races h2, .grd-txt {
         font-size: 20dvh;}
-
+        .content p{
+            margin-bottom: 8px;
+        }
+        .content-link{
+            width: 95%;
+            max-height: 120px;
+        }
 }

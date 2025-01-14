@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import '../style/HorizontalScroll.css'
-import { ScrollAlert } from "./ReusableComponents";
+// import { ScrollAlert } from "./ReusableComponents";
 gsap.registerPlugin(ScrollTrigger);
 
 const HorizontalScroll = () => {
@@ -63,7 +63,7 @@ const HorizontalScroll = () => {
         </div>
       </div>
       
-      <ScrollAlert additionalStyle="text-reveal-scroll-icon mb-2 "/>
+      {/* <ScrollAlert additionalStyle="text-reveal-scroll-icon mb-2 "/> */}
       <div className="py-4"></div>
       {/* <div className="space-100vh lightBG"></div> */}
     </>

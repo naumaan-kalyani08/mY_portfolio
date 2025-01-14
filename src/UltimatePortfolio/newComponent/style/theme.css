@@ -97,6 +97,14 @@ section{
     background-color: #060918;
     /* background-color: #820550; */
     border-radius: 9px;
+    z-index: 10;
+    position: relative;
+}
+.upper-mouse-scroll{
+  z-index: -1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 .about-section{
@@ -541,4 +549,30 @@ body{
       margin: 15px 0;
     }
 
+}
+
+/* custom scrollbar  */
+
+/* Style for the scrollbar */
+::-webkit-scrollbar {
+  width: 12px !important; /* width of the scrollbar */
+  height: 12px !important;   /* height of the horizontal scrollbar */
+}
+
+/* Style for the scrollbar track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1 !important; /* Light background for the track */
+  border-radius: 10px !important;
+}
+
+/* Style for the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #61dafb !important; /* Custom thumb color */
+  border-radius: 10px !important;
+  border: 3px solid #f1f1f1 !important; /* Optional: adds a border around the thumb */
+}
+
+/* Hover effect for the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #45a8d3 !important; /* Darker shade when hovering */
 }

@@ -48,7 +48,7 @@ const PageLoader = () => {
             {letter}
           </div>
         ))}
-      <ScrollAlert additionalStyle="text-reveal-scroll-icon   scroll-icon-spacing custom-fade-in"/>
+      <ScrollAlert additionalStyle="text-reveal-scroll-icon   scroll-icon-spacing custom-fade-in upper-mouse-scroll"/>
       </div>
       
     </div>
