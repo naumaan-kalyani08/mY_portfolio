@@ -7,7 +7,7 @@
     --background-dark: #2d3548;
     --text-light: rgba(255, 255, 255, 0.6);
     --text-lighter: rgba(255, 255, 255, 0.9);
-    --accent-color: #F67B50;
+    --accent-color: #61dafb;
     --spacing-s: 16px;
     --spacing-m: 24px;
     --spacing-l: 32px;
@@ -133,7 +133,7 @@
       top: 56%;
   }
     .timeline::after {
-      left: 31px;
+    left: 27px;
     }
   
     .timeline-container {
@@ -146,7 +146,7 @@
   }
 
     .timeline-container.left::before, .timeline-container.right::before {
-      left: 16px;
+      left: 8px;
     }
   
     .timeline-container.right {
