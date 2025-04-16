@@ -1,7 +1,11 @@
 import React from "react";
 import Globe from "../components/Globe";
 import { SectionButton } from "../components/ReusableComponents";
+import { message } from "antd";
 const ContactUs = () => {
+  const handleContactDetailSubmit = () => {
+    message.success("Details has been submitted successfully! ");
+  };
   return (
     <section>
       <div className="container">
@@ -37,7 +41,13 @@ const ContactUs = () => {
                 </span>
               </div>
               <div className="col-lg-8">
-                <SectionButton btnText="Submit Details" />
+                {/* <SectionButton
+                  onclick={handleContactDetailSubmit}
+                  btnText="Submit Details"
+                /> */}
+                <button onClick={handleContactDetailSubmit} className="button">
+                  Submit Details
+                </button>
               </div>
             </div>
           </div>
