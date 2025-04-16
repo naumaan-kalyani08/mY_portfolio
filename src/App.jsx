@@ -8,6 +8,9 @@ import "./UltimatePortfolio/newComponent/style/Responsive.css";
 import About from "./UltimatePortfolio/newComponent/sections/Testing";
 import "../src/UltimatePortfolio/newComponent/style/Responsive.css";
 import "../src/UltimatePortfolio/newComponent/style/override.css";
+import TechStack from "./UltimatePortfolio/newComponent/sections/TechStack";
+import Globe from "./UltimatePortfolio/newComponent/components/Globe";
+import ContactUs from "./UltimatePortfolio/newComponent/sections/ContactUs";
 // import Timeline from './UltimatePortfolio/newComponent/sections/TimelineSection';
 // import PhotoGrid from './UltimatePortfolio/newComponent/sections/PhotoGrid';
 const App = () => {
@@ -19,6 +22,8 @@ const App = () => {
       {/* <Timeline/> */}
       {/* <TextReveal/>      */}
       {/* <PhotoGrid/> */}
+      <TechStack />
+      <ContactUs />
     </>
   );
 };
