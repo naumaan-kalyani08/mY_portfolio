@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import createGlobe from "cobe";
-import { a, useSpring } from "react-spring";
 
 const Globe = () => {
   const canvasRef = useRef();
