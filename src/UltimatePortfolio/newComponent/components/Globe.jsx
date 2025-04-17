@@ -6,6 +6,7 @@ const Globe = () => {
   const pointerInteracting = useRef(false);
   const pointerInteractionMovement = useRef(0);
   const phi = useRef(0);
+  const velocity = useRef(0);
 
   useEffect(() => {
     let width = 0;
@@ -19,16 +20,22 @@ const Globe = () => {
       diffuse: 1.2,
       mapSamples: 16000,
       mapBrightness: 6,
-      baseColor: [1, 1, 1],
-      markerColor: [0.1, 0.8, 1],
-      glowColor: [1, 1, 1],
+      baseColor: [0.1, 0.6, 1],
+      markerColor: [1, 1, 1],
+      glowColor: [0.37, 0.839, 0.965],
       markers: [
-        { location: [37.7749, -122.4194], size: 0.1 }, // San Francisco
-        { location: [48.8566, 2.3522], size: 0.1 }, // Paris
+        // { location: [23.0225, 72.5714], size: 0.1 }, // Ahmedabad
+        { location: [23.2156, 72.6369], size: 0.1 }, // Gandhinagar
       ],
       onRender: (state) => {
+        if (!pointerInteracting.current) {
+          phi.current += 0.005;
+        } else {
+          phi.current += velocity.current;
+          velocity.current *= 0.95; // gradual slowdown
+        }
+
         state.phi = phi.current;
-        phi.current += 0.005;
         state.width = width * 2;
         state.height = width * 2;
       },
@@ -42,9 +49,35 @@ const Globe = () => {
     window.addEventListener("resize", handleResize);
     handleResize();
 
+    // Mouse / Pointer events for drag interaction
+    const handlePointerDown = (e) => {
+      pointerInteracting.current = true;
+      pointerInteractionMovement.current = e.clientX;
+    };
+
+    const handlePointerMove = (e) => {
+      if (pointerInteracting.current) {
+        const delta = e.clientX - pointerInteractionMovement.current;
+        pointerInteractionMovement.current = e.clientX;
+        velocity.current = delta * 0.002; // control drag sensitivity
+      }
+    };
+
+    const handlePointerUp = () => {
+      pointerInteracting.current = false;
+    };
+
+    const canvas = canvasRef.current;
+    canvas.addEventListener("pointerdown", handlePointerDown);
+    window.addEventListener("pointermove", handlePointerMove);
+    window.addEventListener("pointerup", handlePointerUp);
+
     return () => {
       globe.destroy();
       window.removeEventListener("resize", handleResize);
+      canvas.removeEventListener("pointerdown", handlePointerDown);
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointerup", handlePointerUp);
     };
   }, []);
 
