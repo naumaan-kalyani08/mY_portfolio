@@ -82,7 +82,7 @@ const Globe = () => {
   }, []);
 
   return (
-    <div style={{ width: 600, height: 600 }}>
+    <div className="globe-container">
       <canvas
         ref={canvasRef}
         style={{ width: "100%", height: "100%", cursor: "grab" }}

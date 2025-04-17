@@ -1,52 +1,59 @@
-@media(max-width:450px){
-    .wrapper .h1 {
-        font-size: 5em;
-    }
-    .wrapper {
-        overflow-x: hidden;
-    }
-    .about-btn-wrapper {
-        padding: 0 !important;
-    }
-    .introduction {
-        padding-top: 0;
-    }
-    .hero-bg img {
-        max-width: 390px;
-        width: 100%;
-        max-width: 300px;
-        max-width: 400px;
-        height: 100%;
-        border-radius: 15px;
-        height: 370px;
-        object-fit: cover;
-    }
-    .about-intro {
-        font-size: 14px;
-        line-height: 19px;
-    }
+@media (max-width: 450px) {
+  .globe-container {
+    height: 350px;
+    width: 350px;
+    margin: 0 auto;
+  }
+  .wrapper .h1 {
+    font-size: 5em;
+  }
+  .wrapper {
+    overflow-x: hidden;
+  }
+  .about-btn-wrapper {
+    padding: 0 !important;
+  }
+  .introduction {
+    padding-top: 0;
+  }
+  .hero-bg img {
+    max-width: 390px;
+    width: 100%;
+    max-width: 300px;
+    max-width: 400px;
+    height: 100%;
+    border-radius: 15px;
+    height: 370px;
+    object-fit: cover;
+  }
+  .about-intro {
+    font-size: 14px;
+    line-height: 19px;
+  }
 
-    .intro-name {
-        font-size: 45px;
-        line-height: 47px;
-        margin-bottom: 0px;
-    }
-    .App-logo {
-        height: 11dvh;
-    }
-    .mobile-flex{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  .intro-name {
+    font-size: 45px;
+    line-height: 47px;
+    margin-bottom: 0px;
+  }
+  .App-logo {
+    height: 11dvh;
+  }
+  .mobile-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .races h2, .grd-txt {
-        font-size: 20dvh;}
-        .content p{
-            margin-bottom: 8px;
-        }
-        .content-link{
-            width: 95%;
-            max-height: 120px;
-        }
+  .races h2,
+  .grd-txt {
+    font-size: 20dvh;
+  }
+  .content p {
+    margin-bottom: 8px;
+  }
+  .content-link {
+    width: 95%;
+    max-height: 120px;
+  }
 }
