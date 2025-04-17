@@ -595,3 +595,9 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #45a8d3 !important; /* Darker shade when hovering */
 }
+
+.globe-container {
+  height: 600px;
+  width: 600px;
+  margin: 0 auto;
+}
