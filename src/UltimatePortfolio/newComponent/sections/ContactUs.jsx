@@ -10,7 +10,7 @@ const ContactUs = () => {
     <section>
       <div className="container">
         <SectionButton btnText="Contact Us" />
-        <div className="row border-warning ">
+        <div className="row border-warning align-items-center ">
           <div className="col-lg-6">
             <Globe />
           </div>
