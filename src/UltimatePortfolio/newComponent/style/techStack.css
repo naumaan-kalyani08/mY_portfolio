@@ -1,9 +1,12 @@
 .common-logo-container {
-  padding: 10px 20px;
+  padding: 15px 10px;
   display: inline-block;
   border: 1px solid #5fd6f6;
   margin: 10px;
   color: #5fd6f6;
   text-align: center;
   border-radius: 5px;
+}
+.common-logo-container p {
+  margin: 6px 0 0px 0;
 }
