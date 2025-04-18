@@ -10,7 +10,6 @@ import About from "./UltimatePortfolio/newComponent/sections/Testing";
 import "../src/UltimatePortfolio/newComponent/style/override.css";
 import TechStack from "./UltimatePortfolio/newComponent/sections/TechStack";
 import ContactUs from "./UltimatePortfolio/newComponent/sections/ContactUs";
-import TextReveal from "./UltimatePortfolio/newComponent/components/TextRevealOnScroll";
 // import Timeline from './UltimatePortfolio/newComponent/sections/TimelineSection';
 // import PhotoGrid from './UltimatePortfolio/newComponent/sections/PhotoGrid';
 const App = () => {
