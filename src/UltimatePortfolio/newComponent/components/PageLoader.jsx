@@ -14,8 +14,8 @@ const PageLoader = () => {
     // Boxes animation with stagger amount of 0.5 seconds
     tl.to(boxesRef.current, {
       width: 0,
-      duration: 1.5,
-      delay: 1.5,
+      duration: 1,
+      delay: 1,
       stagger: {
         amount: 0.5, // Distribute stagger over 0.5 seconds evenly
       },
@@ -25,7 +25,13 @@ const PageLoader = () => {
       .fromTo(
         lettersRef.current,
         { y: 700, opacity: 0 }, // Starting from below the screen and invisible
-        { y: 0, opacity: 1, duration: 0.5, stagger:  { amount: 0.4 }, ease: "power4.inOut" }
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          stagger: { amount: 0.4 },
+          ease: "power4.inOut",
+        }
       );
   }, []);
 
@@ -48,9 +54,8 @@ const PageLoader = () => {
             {letter}
           </div>
         ))}
-      <ScrollAlert additionalStyle="text-reveal-scroll-icon   scroll-icon-spacing custom-fade-in upper-mouse-scroll"/>
+        <ScrollAlert additionalStyle="text-reveal-scroll-icon   scroll-icon-spacing custom-fade-in upper-mouse-scroll" />
       </div>
-      
     </div>
   );
 };

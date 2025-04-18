@@ -4,9 +4,12 @@ import createGlobe from "cobe";
 const Globe = () => {
   const canvasRef = useRef();
   const pointerInteracting = useRef(false);
-  const pointerInteractionMovement = useRef(0);
+  const pointerInteractionMovementX = useRef(0);
+  const pointerInteractionMovementY = useRef(0);
   const phi = useRef(0);
-  const velocity = useRef(0);
+  const theta = useRef(0.3);
+  const velocityX = useRef(0);
+  const velocityY = useRef(0);
 
   useEffect(() => {
     let width = 0;
@@ -24,18 +27,27 @@ const Globe = () => {
       markerColor: [1, 1, 1],
       glowColor: [0.37, 0.839, 0.965],
       markers: [
-        // { location: [23.0225, 72.5714], size: 0.1 }, // Ahmedabad
         { location: [23.2156, 72.6369], size: 0.1 }, // Gandhinagar
       ],
       onRender: (state) => {
         if (!pointerInteracting.current) {
           phi.current += 0.005;
         } else {
-          phi.current += velocity.current;
-          velocity.current *= 0.95; // gradual slowdown
+          phi.current += velocityX.current;
+          theta.current += velocityY.current;
+
+          velocityX.current *= 0.95;
+          velocityY.current *= 0.95;
         }
 
+        // Clamp vertical rotation to avoid flipping over
+        theta.current = Math.max(
+          -Math.PI / 2,
+          Math.min(Math.PI / 2, theta.current)
+        );
+
         state.phi = phi.current;
+        state.theta = theta.current;
         state.width = width * 2;
         state.height = width * 2;
       },
@@ -49,17 +61,22 @@ const Globe = () => {
     window.addEventListener("resize", handleResize);
     handleResize();
 
-    // Mouse / Pointer events for drag interaction
     const handlePointerDown = (e) => {
       pointerInteracting.current = true;
-      pointerInteractionMovement.current = e.clientX;
+      pointerInteractionMovementX.current = e.clientX;
+      pointerInteractionMovementY.current = e.clientY;
     };
 
     const handlePointerMove = (e) => {
       if (pointerInteracting.current) {
-        const delta = e.clientX - pointerInteractionMovement.current;
-        pointerInteractionMovement.current = e.clientX;
-        velocity.current = delta * 0.002; // control drag sensitivity
+        const deltaX = e.clientX - pointerInteractionMovementX.current;
+        const deltaY = e.clientY - pointerInteractionMovementY.current;
+
+        pointerInteractionMovementX.current = e.clientX;
+        pointerInteractionMovementY.current = e.clientY;
+
+        velocityX.current = deltaX * 0.002;
+        velocityY.current = deltaY * 0.002;
       }
     };
 

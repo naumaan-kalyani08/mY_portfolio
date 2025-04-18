@@ -1,9 +1,16 @@
-@media (max-width: 450px) {
+@media (max-width: 1024px) {
+  .globe-container {
+    height: 450px;
+    width: 450px;
+  }
+}
+@media (max-width: 576px) {
   .globe-container {
     height: 350px;
     width: 350px;
-    margin: 0 auto;
   }
+}
+@media (max-width: 450px) {
   .wrapper .h1 {
     font-size: 5em;
   }
@@ -55,5 +62,12 @@
   .content-link {
     width: 95%;
     max-height: 120px;
+  }
+}
+
+@media (max-width: 320px) {
+  .globe-container {
+    height: 300px;
+    width: 300px;
   }
 }

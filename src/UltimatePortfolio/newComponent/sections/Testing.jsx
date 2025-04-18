@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../style/theme.css";
+// import "../style/theme.css";
 import { heroSliderData } from "../components/data";
 const About = () => {
   const [heroSlider, setHeroSlider] = useState(heroSliderData);
@@ -83,11 +83,11 @@ const About = () => {
                 </div>
                 <div className="col-lg-3 col-4">
                   <div className="mobile-flex">
-                  <img
-                    src="./logo192.png"
-                    className="App-logo"
-                    alt="react-logo"
-                  />
+                    <img
+                      src="./logo192.png"
+                      className="App-logo"
+                      alt="react-logo"
+                    />
                   </div>
                 </div>
               </div>
