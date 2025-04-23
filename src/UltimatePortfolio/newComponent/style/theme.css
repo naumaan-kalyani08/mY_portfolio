@@ -104,8 +104,8 @@ label {
 }
 section {
   width: 100%;
-  border-top: solid;
-  border-image: linear-gradient(to right, #060918, #04d5ff78, #060918) 1;
+  /* border-top: solid; */
+  /* border-image: linear-gradient(to right, #060918, #04d5ff78, #060918) 1; */
   /* border-image-slice: 1; */
   background-color: #060918;
   /* background-color: #820550; */
