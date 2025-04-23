@@ -1,149 +1,150 @@
 @font-face {
-    font-family: Founder;
-    src: url(FoundersGroteskCondensed-Bold.ttf);
+  font-family: Founder;
+  src: url(FoundersGroteskCondensed-Bold.ttf);
 }
 
 @font-face {
-    font-family: CardinalR;
-    src: url(cardinalfruitweb-regular.ttf);
+  font-family: CardinalR;
+  src: url(cardinalfruitweb-regular.ttf);
 }
 
 @font-face {
-    font-family: Cardinali;
-    src: url(cardinalfruitweb-italic.ttf);
+  font-family: Cardinali;
+  src: url(cardinalfruitweb-italic.ttf);
 }
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body{
-    width: 100%;
-    height: 100%;
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
-.main-p{
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(61, 61, 61);
+.main-p {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(61, 61, 61);
 }
 
-#main{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-color: aquamarine;
-    /* overflow: hidden; */
+#main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: aquamarine;
+  /* overflow: hidden; */
 }
 
-#top{
-    top: 0%;
+#top {
+  top: 0%;
 }
 
-#bottom{
-    bottom: 0;    
+#bottom {
+  bottom: 0;
 }
 
-#top,#bottom{
-    position: absolute;
-    width: 100%;
-    overflow: hidden;
-    height: 50vh;
-    z-index: 999;
-    background-color: #121212;
+#top,
+#bottom {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 50vh;
+  z-index: 999;
+  /* background-color: #121212; */
 }
-#center{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    transform-origin: center;
-    background-color: rgb(0, 0, 0);
-    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
-    overflow: hidden;
+#center {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  transform-origin: center;
+  background-color: rgb(0, 0, 0);
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+  overflow: hidden;
 }
 
-
-
-#main h1{
-    font-family: Founder;
-    font-weight: 900; /* Optional */
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,152,155,1) 0.1%, rgba(0,94,120,1) 94.2% ); 
-    font-size: 21vw;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; /* Make text color transparent */
-    background-clip: text;
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+#main h1 {
+  font-family: Founder;
+  font-weight: 900; /* Optional */
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(0, 152, 155, 1) 0.1%,
+    rgba(0, 94, 120, 1) 94.2%
+  );
+  font-size: 21vw;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Make text color transparent */
+  background-clip: text;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
-.text-reveal-scroll-icon{
-    position: absolute;
-    /* left: 50%; */
-    bottom: 5%;
+.text-reveal-scroll-icon {
+  position: absolute;
+  /* left: 50%; */
+  bottom: 5%;
 }
 /* #top-h1{
     bottom: 20.0001%;
 } */
 
-#bottom-h1{
-    top: -10% !important;
+#bottom-h1 {
+  top: -10% !important;
 }
-.about-btn-wrapper{
-    padding-top: 20px;
+.about-btn-wrapper {
+  padding-top: 20px;
 }
-.content{
-    margin-top: 100vh;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    width: 100%;
-    height: 100vh;
-    color: #fff;
-    gap: 4vh;
-}
-
-.content h4{
-    font-size: 1vw;
-    font-family: Founder;
+.content {
+  margin-top: 100vh;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  gap: 4vh;
 }
 
-.content h3{
-    width: 22%;
-    font-size: 3vw;
-    font-family: CardinalR;
-    text-align: center;
-    font-weight: 400;
+.content h4 {
+  font-size: 1vw;
+  font-family: Founder;
 }
 
-.content .btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 7vw;
-    height: 2vw;
-    border-radius: 50px;
-    background-color: #fff;
-    color: #0d0d0d;
-    font-family: Founder;
+.content h3 {
+  width: 22%;
+  font-size: 3vw;
+  font-family: CardinalR;
+  text-align: center;
+  font-weight: 400;
 }
 
-.content h2{
-    font-size: 20vw;
-    font-family: Founder;
-}
-@media(max-width:430px){
-    #bottom-h1{
-        bottom: 21.2222%;
-    }
-    #top-h1{
-        top: 70.0001%;
-    }
-    
+.content .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7vw;
+  height: 2vw;
+  border-radius: 50px;
+  background-color: #fff;
+  color: #0d0d0d;
+  font-family: Founder;
 }
 
+.content h2 {
+  font-size: 20vw;
+  font-family: Founder;
+}
+@media (max-width: 430px) {
+  #bottom-h1 {
+    bottom: 21.2222%;
+  }
+  #top-h1 {
+    top: 70.0001%;
+  }
+}
