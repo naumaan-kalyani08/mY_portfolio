@@ -36,27 +36,29 @@ const PageLoader = () => {
   }, []);
 
   return (
-    <div className="custom-container">
-      {[...Array(10)].map((_, index) => (
-        <div
-          key={index}
-          ref={(el) => (boxesRef.current[index] = el)}
-          className="boxes"
-        ></div>
-      ))}
-      <div className="wrapper">
-        {"Hello!".split("").map((letter, index) => (
+    <secction>
+      <div className="custom-container">
+        {[...Array(10)].map((_, index) => (
           <div
             key={index}
-            ref={(el) => (lettersRef.current[index] = el)}
-            className="h1"
-          >
-            {letter}
-          </div>
+            ref={(el) => (boxesRef.current[index] = el)}
+            className="boxes"
+          ></div>
         ))}
-        <ScrollAlert additionalStyle="text-reveal-scroll-icon   scroll-icon-spacing custom-fade-in upper-mouse-scroll" />
+        <div className="wrapper">
+          {"Hello!".split("").map((letter, index) => (
+            <div
+              key={index}
+              ref={(el) => (lettersRef.current[index] = el)}
+              className="h1"
+            >
+              {letter}
+            </div>
+          ))}
+          <ScrollAlert additionalStyle="text-reveal-scroll-icon   scroll-icon-spacing custom-fade-in upper-mouse-scroll" />
+        </div>
       </div>
-    </div>
+    </secction>
   );
 };
 
