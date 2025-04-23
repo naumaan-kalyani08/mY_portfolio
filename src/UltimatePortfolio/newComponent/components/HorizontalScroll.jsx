@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import '../style/HorizontalScroll.css'
+import "../style/HorizontalScroll.css";
 // import { ScrollAlert } from "./ReusableComponents";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,13 +29,13 @@ const HorizontalScroll = () => {
       markers: false, // Show markers for debugging
 
       // Animation to move the races element as per scroll
-      onUpdate: self => {
+      onUpdate: (self) => {
         // Update the x position of .races based on scroll progress
         gsap.to(races, {
           x: -getScrollAmount() * self.progress, // Move races based on scroll progress
           ease: "none",
         });
-      }
+      },
     });
 
     // Recalculate the scroll amount on window resize
@@ -51,18 +51,22 @@ const HorizontalScroll = () => {
   return (
     <>
       {/* <div className="space-50vh "></div> */}
-      <div ref={wrapperRef} className="racesWrapper"> {/* ScrollTrigger trigger */}
-        <div ref={racesRef} className="races"> {/* This will be animated to the left */}
-        {/* Welcome to my portfolio—a showcase of my skills, expertise, and projects. */}
+      <div ref={wrapperRef} className="racesWrapper">
+        {" "}
+        {/* ScrollTrigger trigger */}
+        <div ref={racesRef} className="races">
+          {" "}
+          {/* This will be animated to the left */}
+          {/* Welcome to my portfolio—a showcase of my skills, expertise, and projects. */}
           <h2> Welcome</h2>
           <h2>To </h2>
           <h2> My</h2>
           <h2>Portfolio </h2>
-
+          <div style={{ minWidth: "100vw" }}></div> {/* trailing space */}
           {/* <h2>Japan</h2> */}
         </div>
       </div>
-      
+
       {/* <ScrollAlert additionalStyle="text-reveal-scroll-icon mb-2 "/> */}
       <div className="py-4"></div>
       {/* <div className="space-100vh lightBG"></div> */}
