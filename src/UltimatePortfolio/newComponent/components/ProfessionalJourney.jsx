@@ -1,119 +1,118 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import "../style/ScrollPathAnimation.css";
 
-gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 const BeePathAnimation = () => {
-  const worldRef = useRef(null);
   const svgRef = useRef(null);
   const pathRef = useRef(null);
+  const worldRef = useRef(null);
   const boxRefs = useRef([]);
 
-  useEffect(() => {
-    const world = worldRef.current;
+  const initAnimation = () => {
     const path = pathRef.current;
-    const parentTop = world.getBoundingClientRect().top;
+    const world = worldRef.current;
+    const boxes = boxRefs.current;
 
-    const totalLength = path.getTotalLength();
-    console.log("Total path length:", totalLength);
+    // Clear existing animations
+    ScrollTrigger.getAll().forEach((st) => st.kill());
+    gsap.killTweensOf("*");
 
-    let i = 0;
-    boxRefs.current.forEach((element) => {
-      const offset = element.getBoundingClientRect().top - parentTop;
-      const xPercent = i++ * 0.2;
+    boxes.forEach((box, i) => {
+      const xPercent = i * 0.2;
 
-      gsap.set(element, {
+      gsap.set(box, {
         xPercent: -50,
         yPercent: -50,
-        x: offset,
-        y: 0, // can be dynamic or use motionPath's values
       });
 
-      gsap.to(element, {
+      gsap.to(box, {
         motionPath: {
           path: path,
           align: path,
           type: "cubic",
           start: xPercent,
         },
-        ease: "linear",
+        ease: "none",
         scrollTrigger: {
-          trigger: element,
-          start: "center 40%",
-          endTrigger: svgRef.current,
-          markers: true,
+          trigger: world, // scroll starts when BeePathAnimation section is in view
+          start: "top center", // animation starts when 'world' reaches center of viewport
+          end: "bottom center",
           scrub: true,
+          markers: true, // turn off after debugging
         },
       });
     });
+  };
+
+  useLayoutEffect(() => {
+    initAnimation();
+    window.addEventListener("resize", initAnimation);
+
+    return () => {
+      window.removeEventListener("resize", initAnimation);
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+    };
   }, []);
 
   return (
-    <>
-      <div className="spacer" style={{ height: "100vh" }}></div>
-
-      <section
-        className="container my-5 position-relative d-flex justify-content-between flex-column"
-        id="world"
-        ref={worldRef}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 703 2467"
-          fill="none"
-          preserveAspectRatio="none"
-          className="w-100 h-100 position-absolute"
-          ref={svgRef}
+    <div className="custom-wrapper position-relative">
+      <div className="scrollpath-wrapper">
+        <div className="spacer" />
+        <section
+          className="container my-5 position-relative d-flex flex-column"
+          ref={worldRef}
+          id="world"
         >
-          <path
-            ref={pathRef}
-            id="path1"
-            d="M2 2C2 196.5 484 160.5 596.5 438C709 715.5 33 1062 105.5 1301C204.5 1568 835 1736.5 675 2037C607.333 2164.09 393 2269 393 2465"
-            stroke="#231F20"
-            strokeWidth="4"
-            strokeLinecap="round"
-          />
-        </svg>
+          <svg
+            ref={svgRef}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 703 2467"
+            fill="none"
+            preserveAspectRatio="xMidYMin meet"
+            className="svg-path"
+          >
+            <path
+              ref={pathRef}
+              id="path1"
+              d="M2 2C2 196.5 484 160.5 596.5 438C709 715.5 33 1062 105.5 1301C204.5 1568 835 1736.5 675 2037C607.333 2164.09 393 2269 393 2465"
+              stroke="#231F20"
+              strokeWidth="4"
+              strokeLinecap="round"
+            />
+          </svg>
 
-        <div className="row mb-5 row-gap-5">
-          <div className="offset-md-2 col-md-4">
-            <div className="box a" ref={(el) => boxRefs.current.push(el)}></div>
+          <div className="gap-5">
+            {[...Array(5)].map((_, index) => (
+              <div className="col-md-6 offset-md-2" key={index}>
+                <div
+                  className="box"
+                  ref={(el) => (boxRefs.current[index] = el)}
+                />
+              </div>
+            ))}
           </div>
 
-          <div className="col-md-6 pb-5">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <div className="text-wrap">
+            <div className="content-right text-1">
+              <p>text 1</p>
+            </div>
+            <div className="conten-left text-2">
+              <p>text 2</p>
+            </div>
+            <div className="content-right text-3">
+              <p>text 3</p>
+            </div>
+            <div className="conten-left text-4">
+              <p>text 4</p>
+            </div>
           </div>
-
-          <div className="col-md-4 pb-5">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-          </div>
-
-          <div className="col-md-6 offset-md-2">
-            <div className="box" ref={(el) => boxRefs.current.push(el)}></div>
-          </div>
-
-          <div className="offset-md-2 col-md-4">
-            <div className="box" ref={(el) => boxRefs.current.push(el)}></div>
-          </div>
-
-          <div className="col-md-6 pb-5">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-          </div>
-        </div>
-
-        <div className="col-md-4 pb-5">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        </div>
-
-        <div className="col-md-6 offset-md-2">
-          <div className="box" ref={(el) => boxRefs.current.push(el)}></div>
-        </div>
-      </section>
-
-      <div className="spacer" style={{ height: "100vh" }}></div>
-    </>
+        </section>
+      </div>
+    </div>
   );
 };
 
