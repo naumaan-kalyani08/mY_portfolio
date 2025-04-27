@@ -75,9 +75,17 @@ const ContactUs = () => {
             <form
               name="contact"
               method="post"
-              data-netifly="true"
-              action="/thank-you"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
             >
+              <input type="hidden" name="form-name" value="contact" />
+              {/* Honeypot anti-bot field (hidden) */}
+              <p hidden>
+                <label>
+                  Don’t fill this out if you're human:{" "}
+                  <input name="bot-field" />
+                </label>
+              </p>
               <div className="row justify-content-center mx-auto">
                 <div className="col-lg-8">
                   <span>
@@ -88,6 +96,8 @@ const ContactUs = () => {
                       value={formData.name}
                       type="text"
                       className="w-100 common-input-design"
+                      required
+                      placeholder="Enter your name"
                     />
                     {error.name && <p className="text-danger ">{error.name}</p>}
                   </span>
@@ -100,6 +110,8 @@ const ContactUs = () => {
                       onChange={handleChange}
                       value={formData.email}
                       type="text"
+                      required
+                      placeholder="Enter your email"
                       className="w-100 common-input-design"
                     />
                     {error.email && (
@@ -115,6 +127,9 @@ const ContactUs = () => {
                       onChange={handleChange}
                       value={formData.phone}
                       type="number"
+                      required
+                      placeholder="Enter your phone number"
+                      maxLength={10}
                       className="w-100 common-input-design"
                     />
                     {error.phone && (
