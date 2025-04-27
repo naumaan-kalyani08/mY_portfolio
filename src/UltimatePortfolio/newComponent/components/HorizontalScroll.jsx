@@ -62,7 +62,7 @@ const HorizontalScroll = () => {
           <h2>To </h2>
           <h2> My</h2>
           <h2>Portfolio </h2>
-          <div style={{ minWidth: "100vw" }}></div> {/* trailing space */}
+          <div style={{ minWidth: "110vw" }}></div> {/* trailing space */}
           {/* <h2>Japan</h2> */}
         </div>
       </div>
