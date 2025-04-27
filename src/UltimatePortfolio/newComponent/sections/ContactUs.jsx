@@ -72,67 +72,81 @@ const ContactUs = () => {
             <Globe />
           </div>
           <div className="col-lg-6">
-            <div className="row justify-content-center mx-auto">
-              <div className="col-lg-8">
-                <span>
-                  <label htmlFor="Name">Name</label>
-                  <input
-                    name="name"
-                    onChange={handleChange}
-                    value={formData.name}
-                    type="text"
-                    className="w-100 common-input-design"
-                  />
-                  {error.name && <p className="text-danger ">{error.name}</p>}
-                </span>
+            <form
+              name="contact"
+              method="post"
+              data-netifly="true"
+              action="/thank-you"
+            >
+              <div className="row justify-content-center mx-auto">
+                <div className="col-lg-8">
+                  <span>
+                    <label htmlFor="Name">Name</label>
+                    <input
+                      name="name"
+                      onChange={handleChange}
+                      value={formData.name}
+                      type="text"
+                      className="w-100 common-input-design"
+                    />
+                    {error.name && <p className="text-danger ">{error.name}</p>}
+                  </span>
+                </div>
+                <div className="col-lg-8">
+                  <span>
+                    <label htmlFor="Email">Email</label>
+                    <input
+                      name="email"
+                      onChange={handleChange}
+                      value={formData.email}
+                      type="text"
+                      className="w-100 common-input-design"
+                    />
+                    {error.email && (
+                      <p className="text-danger">{error.email}</p>
+                    )}
+                  </span>
+                </div>
+                <div className="col-lg-8">
+                  <span>
+                    <label htmlFor="Phone">Phone</label>
+                    <input
+                      name="phone"
+                      onChange={handleChange}
+                      value={formData.phone}
+                      type="number"
+                      className="w-100 common-input-design"
+                    />
+                    {error.phone && (
+                      <p className="text-danger">{error.phone}</p>
+                    )}
+                  </span>
+                </div>
+                <div className="col-lg-8">
+                  <span>
+                    <label htmlFor="Message">Message</label>
+                    <textarea
+                      name="message"
+                      onChange={handleChange}
+                      value={formData.message}
+                      rows="4"
+                      className="w-100 common-input-design"
+                    />
+                    {error.message && (
+                      <p className="text-danger">{error.message}</p>
+                    )}
+                  </span>
+                </div>
+                <div className="col-lg-8">
+                  <button
+                    onClick={handleContactDetailSubmit}
+                    className="button"
+                  >
+                    Submit Details
+                  </button>
+                </div>
               </div>
-              <div className="col-lg-8">
-                <span>
-                  <label htmlFor="Email">Email</label>
-                  <input
-                    name="email"
-                    onChange={handleChange}
-                    value={formData.email}
-                    type="text"
-                    className="w-100 common-input-design"
-                  />
-                  {error.email && <p className="text-danger">{error.email}</p>}
-                </span>
-              </div>
-              <div className="col-lg-8">
-                <span>
-                  <label htmlFor="Phone">Phone</label>
-                  <input
-                    name="phone"
-                    onChange={handleChange}
-                    value={formData.phone}
-                    type="number"
-                    className="w-100 common-input-design"
-                  />
-                  {error.phone && <p className="text-danger">{error.phone}</p>}
-                </span>
-              </div>
-              <div className="col-lg-8">
-                <span>
-                  <label htmlFor="Message">Message</label>
-                  <textarea
-                    name="message"
-                    onChange={handleChange}
-                    value={formData.message}
-                    rows="4"
-                    className="w-100 common-input-design"
-                  />
-                  {error.message && (
-                    <p className="text-danger">{error.message}</p>
-                  )}
-                </span>
-              </div>
-              <div className="col-lg-8">
-                <button onClick={handleContactDetailSubmit} className="button">
-                  Submit Details
-                </button>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
