@@ -55,11 +55,13 @@ const ContactUs = () => {
     return isValid;
   };
 
-  const handleContactDetailSubmit = () => {
+  const handleContactDetailSubmit = (e) => {
+    e.preventDefault(); // Stop default form submission
+
     if (validateForm()) {
       message.success("Details have been submitted successfully!");
-      // Perform form submission logic here
-      console.log("Form Data:", formData);
+      // After validation, let the form submit naturally
+      e.target.submit();
     }
   };
 
@@ -77,19 +79,23 @@ const ContactUs = () => {
               method="post"
               data-netlify="true"
               netlify-honeypot="bot-field"
+              onSubmit={handleContactDetailSubmit}
             >
+              {/* Netlify form hidden input */}
               <input type="hidden" name="form-name" value="contact" />
-              {/* Honeypot anti-bot field (hidden) */}
+
+              {/* Honeypot anti-bot field */}
               <p hidden>
                 <label>
                   Don’t fill this out if you're human:{" "}
                   <input name="bot-field" />
                 </label>
               </p>
+
               <div className="row justify-content-center mx-auto">
                 <div className="col-lg-8">
                   <span>
-                    <label htmlFor="Name">Name</label>
+                    <label htmlFor="name">Name</label>
                     <input
                       name="name"
                       onChange={handleChange}
@@ -99,17 +105,18 @@ const ContactUs = () => {
                       required
                       placeholder="Enter your name"
                     />
-                    {error.name && <p className="text-danger ">{error.name}</p>}
+                    {error.name && <p className="text-danger">{error.name}</p>}
                   </span>
                 </div>
+
                 <div className="col-lg-8">
                   <span>
-                    <label htmlFor="Email">Email</label>
+                    <label htmlFor="email">Email</label>
                     <input
                       name="email"
                       onChange={handleChange}
                       value={formData.email}
-                      type="text"
+                      type="email"
                       required
                       placeholder="Enter your email"
                       className="w-100 common-input-design"
@@ -119,17 +126,17 @@ const ContactUs = () => {
                     )}
                   </span>
                 </div>
+
                 <div className="col-lg-8">
                   <span>
-                    <label htmlFor="Phone">Phone</label>
+                    <label htmlFor="phone">Phone</label>
                     <input
                       name="phone"
                       onChange={handleChange}
                       value={formData.phone}
-                      type="number"
+                      type="text" // Changed from "number" to "text" to allow validation
                       required
                       placeholder="Enter your phone number"
-                      maxLength={10}
                       className="w-100 common-input-design"
                     />
                     {error.phone && (
@@ -137,26 +144,27 @@ const ContactUs = () => {
                     )}
                   </span>
                 </div>
+
                 <div className="col-lg-8">
                   <span>
-                    <label htmlFor="Message">Message</label>
+                    <label htmlFor="message">Message</label>
                     <textarea
                       name="message"
                       onChange={handleChange}
                       value={formData.message}
                       rows="4"
                       className="w-100 common-input-design"
+                      placeholder="Enter your message"
+                      required
                     />
                     {error.message && (
                       <p className="text-danger">{error.message}</p>
                     )}
                   </span>
                 </div>
+
                 <div className="col-lg-8">
-                  <button
-                    onClick={handleContactDetailSubmit}
-                    className="button"
-                  >
+                  <button type="submit" className="button">
                     Submit Details
                   </button>
                 </div>
