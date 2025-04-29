@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Globe from "../components/Globe";
 import { SectionButton } from "../components/ReusableComponents";
 import { message } from "antd";
@@ -18,10 +18,12 @@ const ContactUs = () => {
     message: "",
   });
 
+  const formRef = useRef(null); // Ref to the form
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    setError((prev) => ({ ...prev, [name]: "" })); // Clear error for the field
+    setError((prev) => ({ ...prev, [name]: "" })); // Clear error on change
   };
 
   const validateForm = () => {
@@ -56,12 +58,11 @@ const ContactUs = () => {
   };
 
   const handleContactDetailSubmit = (e) => {
-    e.preventDefault(); // Stop default form submission
+    e.preventDefault();
 
     if (validateForm()) {
       message.success("Details have been submitted successfully!");
-      // After validation, let the form submit naturally
-      e.target.submit();
+      formRef.current.submit(); // Native form submit for Netlify
     }
   };
 
@@ -75,16 +76,17 @@ const ContactUs = () => {
           </div>
           <div className="col-lg-6">
             <form
+              ref={formRef}
               name="contact"
-              method="post"
+              method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
               onSubmit={handleContactDetailSubmit}
             >
-              {/* Netlify form hidden input */}
+              {/* Netlify hidden input */}
               <input type="hidden" name="form-name" value="contact" />
 
-              {/* Honeypot anti-bot field */}
+              {/* Honeypot field */}
               <p hidden>
                 <label>
                   Don’t fill this out if you're human:{" "}
@@ -134,7 +136,7 @@ const ContactUs = () => {
                       name="phone"
                       onChange={handleChange}
                       value={formData.phone}
-                      type="text" // Changed from "number" to "text" to allow validation
+                      type="text"
                       required
                       placeholder="Enter your phone number"
                       className="w-100 common-input-design"
