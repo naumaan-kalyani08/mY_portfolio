@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Globe from "../components/Globe";
 import { SectionButton } from "../components/ReusableComponents";
 import { message } from "antd";
@@ -18,12 +18,10 @@ const ContactUs = () => {
     message: "",
   });
 
-  const formRef = useRef(null); // Ref to the form
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    setError((prev) => ({ ...prev, [name]: "" })); // Clear error on change
+    setError((prev) => ({ ...prev, [name]: "" }));
   };
 
   const validateForm = () => {
@@ -57,13 +55,34 @@ const ContactUs = () => {
     return isValid;
   };
 
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
   const handleContactDetailSubmit = (e) => {
     e.preventDefault();
 
-    if (validateForm()) {
-      message.success("Details have been submitted successfully!");
-      formRef.current.submit(); // Native form submit for Netlify
-    }
+    if (!validateForm()) return;
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "contact",
+        ...formData,
+      }),
+    })
+      .then(() => {
+        message.success("Details have been submitted successfully!");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      })
+      .catch(() => {
+        message.error("Something went wrong. Please try again.");
+      });
   };
 
   return (
@@ -76,93 +95,73 @@ const ContactUs = () => {
           </div>
           <div className="col-lg-6">
             <form
-              ref={formRef}
               name="contact"
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
               onSubmit={handleContactDetailSubmit}
             >
-              {/* Netlify hidden input */}
               <input type="hidden" name="form-name" value="contact" />
-
-              {/* Honeypot field */}
               <p hidden>
                 <label>
-                  Don’t fill this out if you're human:{" "}
+                  Don’t fill this out if you're human:
                   <input name="bot-field" />
                 </label>
               </p>
 
               <div className="row justify-content-center mx-auto">
                 <div className="col-lg-8">
-                  <span>
-                    <label htmlFor="name">Name</label>
-                    <input
-                      name="name"
-                      onChange={handleChange}
-                      value={formData.name}
-                      type="text"
-                      className="w-100 common-input-design"
-                      required
-                      placeholder="Enter your name"
-                    />
-                    {error.name && <p className="text-danger">{error.name}</p>}
-                  </span>
+                  <label>Name</label>
+                  <input
+                    name="name"
+                    type="text"
+                    className="w-100 common-input-design"
+                    onChange={handleChange}
+                    value={formData.name}
+                    placeholder="Enter your name"
+                  />
+                  {error.name && <p className="text-danger">{error.name}</p>}
                 </div>
 
                 <div className="col-lg-8">
-                  <span>
-                    <label htmlFor="email">Email</label>
-                    <input
-                      name="email"
-                      onChange={handleChange}
-                      value={formData.email}
-                      type="email"
-                      required
-                      placeholder="Enter your email"
-                      className="w-100 common-input-design"
-                    />
-                    {error.email && (
-                      <p className="text-danger">{error.email}</p>
-                    )}
-                  </span>
+                  <label>Email</label>
+                  <input
+                    name="email"
+                    type="email"
+                    className="w-100 common-input-design"
+                    onChange={handleChange}
+                    value={formData.email}
+                    placeholder="Enter your email"
+                  />
+                  {error.email && <p className="text-danger">{error.email}</p>}
                 </div>
 
                 <div className="col-lg-8">
-                  <span>
-                    <label htmlFor="phone">Phone</label>
-                    <input
-                      name="phone"
-                      onChange={handleChange}
-                      value={formData.phone}
-                      type="text"
-                      required
-                      placeholder="Enter your phone number"
-                      className="w-100 common-input-design"
-                    />
-                    {error.phone && (
-                      <p className="text-danger">{error.phone}</p>
-                    )}
-                  </span>
+                  <label>Phone</label>
+                  <input
+                    name="phone"
+                    type="text"
+                    className="w-100 common-input-design"
+                    onChange={handleChange}
+                    value={formData.phone}
+                    placeholder="Enter your phone number"
+                  />
+                  {error.phone && <p className="text-danger">{error.phone}</p>}
                 </div>
 
                 <div className="col-lg-8">
-                  <span>
-                    <label htmlFor="message">Message</label>
-                    <textarea
-                      name="message"
-                      onChange={handleChange}
-                      value={formData.message}
-                      rows="4"
-                      className="w-100 common-input-design"
-                      placeholder="Enter your message"
-                      required
-                    />
-                    {error.message && (
-                      <p className="text-danger">{error.message}</p>
-                    )}
-                  </span>
+                  <label>Message</label>
+                  <textarea
+                    name="message"
+                    rows="4"
+                    className="w-100 common-input-design"
+                    onChange={handleChange}
+                    value={formData.message}
+                    placeholder="Enter your message"
+                  />
+                  {error.message && (
+                    <p className="text-danger">{error.message}</p>
+                  )}
                 </div>
 
                 <div className="col-lg-8">
