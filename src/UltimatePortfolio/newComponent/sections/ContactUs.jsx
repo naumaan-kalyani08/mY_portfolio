@@ -88,7 +88,7 @@ const ContactUs = () => {
   return (
     <section>
       <div className="container">
-        <SectionButton btnText="Contact Us" />
+        <SectionButton btnText="Get in Touch" />
         <div className="row border-warning align-items-center">
           <div className="col-lg-6">
             <Globe />
