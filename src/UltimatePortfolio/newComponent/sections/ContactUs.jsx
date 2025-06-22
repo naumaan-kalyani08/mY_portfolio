@@ -86,7 +86,7 @@ const ContactUs = () => {
   };
 
   return (
-    <section>
+    <section id="get_in_touch">
       <div className="container">
         <SectionButton btnText="Get in Touch" />
         <div className="row border-warning align-items-center">

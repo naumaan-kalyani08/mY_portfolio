@@ -11,6 +11,7 @@ import About from "./UltimatePortfolio/newComponent/sections/Testing";
 import "../src/UltimatePortfolio/newComponent/style/override.css";
 import TechStack from "./UltimatePortfolio/newComponent/sections/TechStack";
 import ContactUs from "./UltimatePortfolio/newComponent/sections/ContactUs";
+import Header from "./UltimatePortfolio/newComponent/components/Header";
 // import BeePathAnimation from "./UltimatePortfolio/newComponent/components/ProfessionalJourney";
 // import Timeline from './UltimatePortfolio/newComponent/sections/TimelineSection';
 // import PhotoGrid from './UltimatePortfolio/newComponent/sections/PhotoGrid';
@@ -18,6 +19,7 @@ const App = () => {
   return (
     <>
       <PageLoader />
+      <Header />
       <HorizontalScroll />
       <About />
       {/* <Timeline/> */}

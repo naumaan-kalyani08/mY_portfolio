@@ -22,7 +22,7 @@ import "../style/techStack.css";
 import { DiPhotoshop } from "react-icons/di";
 const TechStack = () => {
   return (
-    <section>
+    <section id="tech">
       <div className="container">
         <SectionButton btnText="Tech Stack " />
         <div className="row justify-content-evenly pb-4">

@@ -36,7 +36,7 @@ const PageLoader = () => {
   }, []);
 
   return (
-    <secction>
+    <secction id="home">
       <div className="custom-container">
         {[...Array(10)].map((_, index) => (
           <div

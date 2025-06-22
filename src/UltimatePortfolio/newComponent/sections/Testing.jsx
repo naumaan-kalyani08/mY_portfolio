@@ -12,7 +12,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="intro">
+    <section id="about">
       <div className="container">
         <div className="d-flex align-items-center justify-content-center about-btn-wrapper py-3">
           <div className="button-wrapper">

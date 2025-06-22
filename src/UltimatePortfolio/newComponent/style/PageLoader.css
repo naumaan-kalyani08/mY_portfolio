@@ -8,6 +8,7 @@
 
 body {
   background: #060918;
+  /* background: #e8e8e8; */
   /* overflow: hidden; */
 }
 
@@ -16,7 +17,7 @@ body {
   height: 10vh;
   background: #282828;
   position: relative;
-  z-index: 20;
+  z-index: 100;
 }
 
 .wrapper {
