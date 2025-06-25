@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 // import "../style/theme.css";
 import { heroSliderData } from "../components/data";
+import DecryptText from "../components/DecryptText";
 const About = () => {
   const [heroSlider, setHeroSlider] = useState(heroSliderData);
   console.log(setHeroSlider);
@@ -94,7 +95,7 @@ const About = () => {
               {/* <p>
                 I'm a Web Developer
               </p> */}
-              <p id="companionMethods"></p>
+              <DecryptText />
               <p
                 data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
