@@ -4,6 +4,14 @@
     width: 450px;
   }
 }
+@media (max-width: 768px) {
+  .mobile-menu-button-container {
+    display: block;
+  }
+  .nav-menu-wrapper-desktop {
+    display: none;
+  }
+}
 @media (max-width: 576px) {
   .globe-container {
     height: 350px;

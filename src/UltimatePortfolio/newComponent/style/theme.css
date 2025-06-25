@@ -6,6 +6,7 @@
 :root {
   --background-color: #060918;
   --font-color: rgb(0 152 155);
+  --primary-font-color: #00ebeb;
 }
 
 html {
@@ -311,10 +312,18 @@ section {
   color: #3dffff;
 }
 .highlight {
-  color: #61dafb;
+  color: #3dffff;
   font-size: 20px;
 }
-
+.mobile-nav-menu-wrapper {
+  flex-direction: column;
+}
+.mobile-nav-menu-wrapper .nav-menu {
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+  /* font-size: 20px; */
+}
 /* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
@@ -611,16 +620,7 @@ body {
 }
 
 .header-main-wrapper {
-  /* From https://css.glass */
-  /* background: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px); */
-  /* From https://css.glass */
   background: rgba(255, 255, 255, 0.03);
-  /* border-radius: 16px; */
-  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   backdrop-filter: blur(2.9px);
   -webkit-backdrop-filter: blur(2.9px);
   position: fixed;
@@ -630,6 +630,11 @@ body {
   width: 100%;
   /* height: 80px; */
   padding: 12px 30px;
+}
+.mobile-menu-button {
+  background-color: transparent;
+  border: none;
+  color: var(--font-color);
 }
 .navbar-container {
   display: flex;
@@ -641,7 +646,7 @@ body {
   /* color: rgb(0 94 120); */
   color: var(--font-color);
 }
-.navbar-container a {
+.nav-menu-wrapper a {
   color: var(--font-color);
   text-decoration: none;
   position: relative;
@@ -681,3 +686,20 @@ body {
 .nav-menu {
   padding: 0 15px;
 }
+.mobile-menu-button-container {
+  display: none;
+}
+.decrypt-text {
+  white-space: nowrap;
+}
+.mobile-nav-menu-wrapper .nav-menu {
+  padding: 15px 25px;
+  border-bottom: 2px solid #5fd6f62b;
+}
+.mobile-nav-menu-wrapper .nav-menu a {
+  font-size: 16px;
+  font-weight: 600;
+}
+/* .mobile-drawer .ant-drawer-header-title .ant-drawer-title {
+  font-size: 20px;
+} */

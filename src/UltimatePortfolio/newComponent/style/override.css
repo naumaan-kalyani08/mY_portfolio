@@ -1,4 +1,25 @@
-.personal-details-timeline .ant-timeline-item-last{
-    padding-bottom: 0;
-    height: 25px;
+.personal-details-timeline .ant-timeline-item-last {
+  padding-bottom: 0;
+  height: 25px;
+}
+/* #0e111f */
+.mobile-drawer .ant-drawer-header {
+  background-color: #0e1120;
+  color: var(--primary-font-color);
+}
+
+.mobile-drawer .anticon svg {
+  color: var(--primary-font-color);
+}
+
+.mobile-drawer .ant-drawer-body {
+  /* background: #0e112081;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.8px);
+  -webkit-backdrop-filter: blur(7.8px); */
+  background-color: #060918;
+}
+.mobile-drawer .ant-drawer-body {
+  padding-left: 0;
+  padding-right: 0;
 }
