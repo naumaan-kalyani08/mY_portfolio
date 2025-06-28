@@ -64,7 +64,7 @@ const Header = () => {
                 </li>
               </ul>
 
-              <div className="mobile-menu-button-container-">
+              <div className="mobile-menu-button-container">
                 <button
                   className="mobile-menu-button"
                   onClick={toggleMobileDrawer}
