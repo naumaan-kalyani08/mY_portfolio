@@ -78,39 +78,39 @@ const TechStack = () => {
             <p>Node </p>
           </span>
 
-          <span className=" common-logo-container col-lg-2 col-md-2 col-4">
+          {/* <span className=" common-logo-container col-lg-2 col-md-2 col-4">
             <SiExpress size={70} />
             <p> Express</p>
-          </span>
+          </span> */}
 
-          <span className=" common-logo-container col-lg-2 col-md-2 col-4">
+          {/* <span className=" common-logo-container col-lg-2 col-md-2 col-4">
             <SiMongodb size={70} />
             <p> MongoDB</p>
-          </span>
+          </span> */}
 
           <span className=" common-logo-container col-lg-2 col-md-2 col-4">
             <SiVuedotjs size={70} />
             <p>Vue js </p>
           </span>
 
-          <span className=" common-logo-container col-lg-2 col-md-2 col-4">
+          {/* <span className=" common-logo-container col-lg-2 col-md-2 col-4">
             <SiPython size={70} />
             <p>Python </p>
-          </span>
+          </span> */}
 
-          <span className="common-logo-container col-lg-2 col-md-2 col-4">
+          {/* <span className="common-logo-container col-lg-2 col-md-2 col-4">
             <SiPostgresql size={70} />
             <p>PGSQL </p>
-          </span>
+          </span> */}
 
-          <span className=" common-logo-container col-lg-2 col-md-2 col-4">
+          {/* <span className=" common-logo-container col-lg-2 col-md-2 col-4">
             <SiMysql size={70} />
             <p> My Sql</p>
-          </span>
-          <span className="common-logo-container col-lg-2 col-md-2 col-4">
+          </span> */}
+          {/* <span className="common-logo-container col-lg-2 col-md-2 col-4">
             <SiFastapi size={70} />
             <p>Fastapi </p>
-          </span>
+          </span> */}
         </div>
       </div>
     </section>
